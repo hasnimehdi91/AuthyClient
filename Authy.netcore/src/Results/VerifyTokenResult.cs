@@ -1,4 +1,4 @@
-﻿namespace Authy.netcore
+﻿namespace Authy.netcore.Results
 {
     /// <summary>
     /// The result of a request to verify a token

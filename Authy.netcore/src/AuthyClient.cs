@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
+using Authy.netcore.Results;
 using Newtonsoft.Json;
 
 namespace Authy.netcore
@@ -27,9 +28,16 @@ namespace Authy.netcore
         /// <param name="test">indicates that the sandbox should be used</param>
         public AuthyClient(string apiKey, bool test = false)
         {
-            this._apiKey = apiKey;
-            this._test = test;
+            if (string.IsNullOrWhiteSpace(apiKey))
+            {
+                throw new Exception("Api key is missing");
+            }
+
+            _apiKey = apiKey;
+            _test = test;
         }
+
+        private string BaseUrl => _test ? "http://sandbox-api.authy.com" : "https://api.authy.com";
 
         /// <summary>
         /// Register a user
@@ -61,7 +69,39 @@ namespace Authy.netcore
                 return apiResponse;
             });
         }
+        
+        
+        /// <summary>
+        /// Remove a user
+        /// <param name="id">User id</param>
+        /// </summary>
+        public RemoveUserResult RemoveUser(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                throw new Exception("User id is missing");
+            }
+            
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                throw new Exception("Invalid user id");
+            }
+            var request = new System.Collections.Specialized.NameValueCollection();
 
+            var url = $"{BaseUrl}/protected/json/users/{id}/remove?api_key={_apiKey}&force=true";
+            return Execute(client =>
+            {
+                var response = client.UploadValues(url, request);
+                var textResponse = Encoding.ASCII.GetString(response);
+
+                var apiResponse = JsonConvert.DeserializeObject<RemoveUserResult>(textResponse);
+                apiResponse.RawResponse = textResponse;
+                apiResponse.Status = AuthyStatus.Success;
+                apiResponse.Message = apiResponse.Message;
+
+                return apiResponse;
+            });
+        }
 
         /// <summary>
         /// Verify a token with authy
@@ -206,7 +246,5 @@ namespace Authy.netcore
                 client.Dispose();
             }
         }
-
-        private string BaseUrl => _test ? "http://sandbox-api.authy.com" : "https://api.authy.com";
     }
 }

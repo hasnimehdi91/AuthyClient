@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Authy.netcore
+namespace Authy.netcore.Results
 {
     /// <summary>
     /// The result of a request to register a user

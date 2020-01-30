@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Authy.netcore
+namespace Authy.netcore.Results
 {
     /// <summary>
     /// A base authy result

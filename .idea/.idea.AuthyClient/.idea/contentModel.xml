@@ -8,17 +8,17 @@
       <e p="Authy.netcore" t="IncludeRecursive">
         <e p=".gitignore" t="Include" />
         <e p="Authy.netcore.csproj" t="IncludeRecursive" />
-        <e p="LICENSE.txt" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
-        <e p="README.md" t="Include" />
         <e p="Startup.cs" t="Include" />
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="global.json" t="Include" />
+        <e p="mono_crash.mem.20062.1.blob" t="Include" />
+        <e p="mono_crash.mem.25998.1.blob" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
@@ -30,12 +30,15 @@
         <e p="src" t="Include">
           <e p="AuthyClient.cs" t="Include" />
           <e p="AuthyHelpers.cs" t="Include" />
-          <e p="AuthyResult.cs" t="Include" />
           <e p="AuthyStatus.cs" t="Include" />
-          <e p="RegisterUserResult.cs" t="Include" />
-          <e p="SendSmsResult.cs" t="Include" />
-          <e p="StartPhoneCallResult.cs" t="Include" />
-          <e p="VerifyTokenResult.cs" t="Include" />
+          <e p="Results" t="Include">
+            <e p="AuthyResult.cs" t="Include" />
+            <e p="RegisterUserResult.cs" t="Include" />
+            <e p="RemoveUserResult.cs" t="Include" />
+            <e p="SendSmsResult.cs" t="Include" />
+            <e p="StartPhoneCallResult.cs" t="Include" />
+            <e p="VerifyTokenResult.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="AuthyClient.sln" t="IncludeFlat" />

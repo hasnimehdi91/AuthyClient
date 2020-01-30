@@ -1,4 +1,4 @@
-﻿namespace Authy.netcore
+﻿namespace Authy.netcore.Results
 {
     /// <summary>
     /// Result from starting a Phone call
