@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>AuthyNetCore</Title>
+        <Authors>Hasni Mehdi</Authors>
+        <Description>Simple Twilio Authy client</Description>
+        <Copyright>All Copyrigth reserved</Copyright>
+        <PackageProjectUrl>https://github.com/hansimehdi/AuthyClient</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/hansimehdi/AuthyClient/blob/master/LICENSE.txt</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/hansimehdi/AuthyClient</RepositoryUrl>
+        <PackageVersion>1.0.1</PackageVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    </ItemGroup>
+
+</Project>
