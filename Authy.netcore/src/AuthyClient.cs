@@ -156,12 +156,13 @@ namespace Authy.netcore
         /// </summary>
         /// <param name="userId">The user ID to send the message to</param>
         /// <param name="force">Force a message to be sent even if the user is already reigistered as an app user.  This will incrase your costs</param>
-        public SendSmsResult SendSms(string userId, bool force = false)
+        /// <param name="locale"></param>
+        public SendSmsResult SendSms(string userId, bool force = false,string locale = "en")
         {
             userId = AuthyHelpers.SanitizeNumber(userId);
 
             var url =
-                $"{BaseUrl}/protected/json/sms/{userId}?api_key={_apiKey}{(force ? "&force=true" : string.Empty)}";
+                $"{BaseUrl}/protected/json/sms/{userId}?api_key={_apiKey}{(force ? "&force=true" : string.Empty)}&locale={locale}";
             return Execute(client =>
             {
                 var response = client.DownloadString(url);

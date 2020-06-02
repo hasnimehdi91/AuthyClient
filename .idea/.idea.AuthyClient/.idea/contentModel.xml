@@ -20,7 +20,7 @@
         <e p="mono_crash.mem.20062.1.blob" t="Include" />
         <e p="mono_crash.mem.25998.1.blob" t="Include" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
+          <e p="Release" t="Include">
             <e p="netcoreapp2.2" t="Include">
               <e p="Authy.netcore.AssemblyInfo.cs" t="Include" />
               <e p="Authy.netcore.RazorAssemblyInfo.cs" t="Include" />
